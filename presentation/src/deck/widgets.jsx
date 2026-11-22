@@ -67,7 +67,7 @@ export function SurfaceMap() {
 }
 
 // ── Two loops ───────────────────────────────────────────────────────────────
-const MARKERS = { Explore: 'M1', Write: 'M2', Fix: 'M3', Test: 'M3–4', 'Pull request': 'M6', Review: 'M6', CI: 'M6', Automate: 'Demo' }
+const MARKERS = { Explore: 'M1', Write: 'M2', Fix: 'M3', Test: 'M3–5', 'Pull request': 'M6', Review: 'M6', CI: 'M6', Automate: 'Demo' }
 
 export function LoopMap({ step }) {
   const motion = useContext(MotionContext)

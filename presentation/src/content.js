@@ -292,13 +292,13 @@ export const SURFACES = [
   { id: 'nes', name: 'Next edit suggestions', where: 'vscode', icon: 'zap', what: 'Predicts the next edit that follows from your last one, even elsewhere in the file. Look for the arrow in the gutter.', mission: 'Mission 2 · Write' },
   { id: 'inlinechat', name: 'Inline chat', where: 'vscode', icon: 'pencil', what: 'Ask for a change right where you are, in the editor or terminal. You get an inline diff to keep or undo.', mission: 'Mission 2 · Write' },
   { id: 'ask', name: 'Chat · Ask', where: 'vscode', icon: 'eye', what: 'Questions about your code. Ask answers without editing files.', mission: 'Mission 1 · Explore' },
-  { id: 'agent', name: 'Chat · Agent', where: 'vscode', icon: 'agent', what: 'Plans, edits files, runs commands and tests, and iterates until the task is done, with your approval.', mission: 'Missions 3, 4 and 6' },
+  { id: 'agent', name: 'Chat · Agent', where: 'vscode', icon: 'agent', what: 'Plans, edits files, runs commands and tests, and iterates until the task is done, with your approval.', mission: 'Missions 3–6' },
   { id: 'plan', name: '/plan', where: 'vscode', icon: 'checklist', what: 'Plan before building: review the steps first, then tell it to start implementing.', mission: 'Quest · Build' },
   { id: 'agents', name: 'Agents window', where: 'vscode', icon: 'workflow', what: 'Run sessions in parallel in their own worktrees, compare models and pick up drafts.', mission: 'Level up' },
-  { id: 'cloud', name: 'Cloud sessions', where: 'vscode', icon: 'upload', what: 'Set Session Target to Cloud: the session runs on GitHub and keeps going when your laptop closes.', mission: 'Live demo' },
+  { id: 'cloud', name: 'Cloud sessions', where: 'vscode', icon: 'upload', what: 'Set Session Target to Cloud: the session runs on GitHub and keeps going when your laptop closes.', mission: 'Level up' },
   { id: 'review', name: 'Copilot code review', where: 'github', icon: 'code-review', what: 'Request Copilot under Reviewers on a pull request. Effort Lite, Balanced (default) or Max.', mission: 'Mission 6 · Ship' },
   { id: 'cloudagent', name: 'Copilot cloud agent', where: 'github', icon: 'dependabot', what: 'Assign an issue to Copilot. It works in the cloud and opens a pull request for you to review.', mission: 'Live demo · WGB-106' },
-  { id: 'automations', name: 'Automations', where: 'github', icon: 'sync', what: 'Cloud agent runs triggered manually, by events or on a schedule. Start one with /automate.', mission: 'Live demo' },
+  { id: 'automations', name: 'Automations', where: 'github', icon: 'sync', what: 'Cloud agent runs triggered manually, by events or on a schedule. Start one with /automate.', mission: 'Live demo · Mission 6' },
   { id: 'evals', name: 'Copilot Evals', where: 'github', icon: 'beaker', what: 'Repeatable tests for skills, agents and MCP tools. Public preview; /eval in VS Code.', mission: 'Quest · Automate' },
 ]
 
@@ -422,7 +422,7 @@ export const SLIDES = [
     notes: [
       'Inner loop: what you do alone in VS Code. Explore, write, fix, test.',
       'Outer loop: what your team does on github.com. Pull request, review, CI, merge, automate.',
-      'Missions 1–4 live in the inner loop; Mission 6 crosses into the outer loop.',
+      'Missions 1–5 live in the inner loop; Mission 6 crosses into the outer loop.',
     ],
   },
   {

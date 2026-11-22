@@ -76,7 +76,9 @@
 .lab-intro { display: flex; flex-direction: column; gap: 10px; padding: 6px 4px 8px; }
 .lab-intro h1 { font-size: clamp(34px, 8vw, 52px); font-weight: 800; font-stretch: 110%; }
 .lab-intro p { margin: 0; color: var(--fg-2); }
-.privacy { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 13.5px; color: var(--muted) !important; }
+.privacy { display: block; font-size: 13.5px; color: var(--muted) !important; }
+.privacy .octicon { display: inline-block; vertical-align: -2px; margin-right: 6px; }
+.privacy .linkish { margin-left: 8px; }
 .mission { scroll-margin-top: 130px; display: flex; flex-direction: column; gap: 14px; padding: 20px 18px; border-radius: 18px; border: 1px solid var(--line); background: rgb(13 17 23 / 92%); position: relative; }
 .mission::before { content: ''; position: absolute; left: -1px; top: 18px; bottom: 18px; width: 3px; border-radius: 3px; background: var(--c, var(--purple)); }
 .mission.sec-inner { --c: var(--purple); }

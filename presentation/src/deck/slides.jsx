@@ -111,7 +111,7 @@ const SPECS = {
       <div className="loops-grid">
         <div>
           <Head kickers={['How the work flows']} title={<h2>Two loops, <em>one Copilot</em></h2>} />
-          <div className={`loop-card is-inner ${on(step, 0)}`}><h3><Octicon name="file-code" size={20} />Inner loop · VS Code</h3><p>What you do alone: explore, write, fix, test.</p><span>Missions 1–4</span></div>
+          <div className={`loop-card is-inner ${on(step, 0)}`}><h3><Octicon name="file-code" size={20} />Inner loop · VS Code</h3><p>What you do alone: explore, write, fix, test.</p><span>Missions 1–5</span></div>
           <div className={`loop-card is-outer ${on(step, 1)}`}><h3><Octicon name="mark-github" size={20} />Outer loop · github.com</h3><p>What your team does together: pull request, review, CI, merge, automate.</p><span>Mission 6 · live demo</span></div>
           <p className={`loop-punch ${on(step, 2)}`}>Same Copilot, same house rules, same skills in both loops.</p>
         </div>
