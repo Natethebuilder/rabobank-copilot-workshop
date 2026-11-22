@@ -38,7 +38,7 @@ export default function Home() {
             <span className="pill pill-brand"><Octicon name="copilot" size={16} />{EVENT.cobrand}</span>
             <span className="pill">{EVENT.format}</span>
           </div>
-          <h1 className="display">Zero to <em>pull request</em> in 30 minutes</h1>
+          <h1 className="display">Zero to <em>pull request</em> <span className="nowrap">in 30 minutes</span></h1>
           <p className="hero-when"><Octicon name="north-star" size={18} />{EVENT.date} · <strong>{EVENT.time}</strong></p>
           <p className="hero-lede">{EVENT.tagline} You’ll explore, write, fix, teach and ship on a fictional bank’s payment service, on your own laptop, with nothing extra to install.</p>
           <div className="hero-cta">

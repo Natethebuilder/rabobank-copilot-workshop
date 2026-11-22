@@ -162,7 +162,7 @@ export default function Lab() {
 
       <main className="lab-main">
         <section className="lab-intro">
-          <span className="kicker">{EVENT.cobrand} · {EVENT.time}</span>
+          <span className="kicker">{EVENT.cobrand} · <span className="nowrap">{EVENT.time}</span></span>
           <h1>Zero to <em>pull request</em></h1>
           <p>Keep this guide next to VS Code. Every prompt has a copy button. Shortcuts follow the system you pick above.</p>
           <p className="privacy"><Octicon name="lock" size={14} />Your progress is saved only in this browser (localStorage). Nothing is sent anywhere.

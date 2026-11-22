@@ -67,7 +67,7 @@ html.is-preview .slide { transition: none; }
 .v-slide { color: var(--fg); }
 .s-head { display: flex; flex-direction: column; gap: 14px; }
 .s-kick { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.s-head h2, .m-header h2 { font-size: 66px; font-weight: 800; font-stretch: 108%; letter-spacing: -0.035em; line-height: 1.02; }
+.s-head h2, .m-header h2 { font-size: 66px; font-weight: 800; font-stretch: 100%; letter-spacing: -0.035em; line-height: 1.02; }
 .s-sub { margin: 0; font-size: 23px; color: var(--muted); max-width: 1180px; line-height: 1.45; }
 .stage-inner code { font-size: .86em; }
 .v-slide .pill { font-size: 15px; }

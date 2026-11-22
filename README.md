@@ -102,4 +102,4 @@ Smoke tests (`presentation/tests/smoke.e2e.js`): every route renders without con
 
 Deploy: pushing to `main` (changes in `presentation/**` or the workflow) runs `.github/workflows/deploy.yml`: Node 24, `npm ci`, Playwright Chromium, `npm test`, then uploads only `presentation/dist` to GitHub Pages. You can also run it manually (workflow_dispatch).
 
-Credits: GitHub Copilot mascot; [Primer Octicons](https://github.com/primer/octicons) (MIT); Mona Sans, Hubot Sans and Monaspace (OFL) via Fontsource; [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (MIT); [@deckio/deck-engine](https://github.com/deckio-art/deck-engine).
+Credits: GitHub Copilot mascot; [Primer Octicons](https://github.com/primer/octicons) (MIT); Mona Sans and Monaspace (OFL) via Fontsource; [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (MIT); [@deckio/deck-engine](https://github.com/deckio-art/deck-engine).
