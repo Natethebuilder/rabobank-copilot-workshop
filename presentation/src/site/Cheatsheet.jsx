@@ -27,9 +27,9 @@ export default function Cheatsheet() {
       <article className="cs">
         <header className="cs-head">
           <div>
-            <span className="cs-kicker"><Octicon name="copilot" size={16} />{EVENT.cobrand} · Cheat sheet</span>
-            <h1>Zero to <em>pull request</em> in 30 minutes</h1>
-            <p>{EVENT.date} · {EVENT.time} · {EVENT.facts}</p>
+            <span className="cs-kicker"><Octicon name="copilot" size={16} />GitHub Copilot in VS Code · Cheat sheet</span>
+            <h1>An introduction to <em>GitHub Copilot</em> <span className="nowrap">in VS Code</span></h1>
+            <p>{EVENT.cobrand} · {EVENT.date} · {EVENT.time} · {EVENT.facts}</p>
           </div>
           <Qr text={LINKS.guide} className="cs-qr" label="QR code to the participant guide" />
         </header>

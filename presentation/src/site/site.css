@@ -15,7 +15,7 @@
 .hero h1 em { white-space: nowrap; }
 .hero-when { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0; font-size: clamp(17px, 2vw, 22px); color: var(--fg-2); }
 .hero-when .octicon { color: var(--pink); }
-.hero-lede { margin: 0; font-size: clamp(17px, 1.6vw, 20px); color: var(--muted); max-width: 620px; line-height: 1.6; }
+.hero-lede { margin: 0; font-size: clamp(17px, 1.6vw, 20px); color: var(--fg-2); max-width: 660px; line-height: 1.6; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .site-main { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; padding: 40px clamp(16px, 4vw, 40px) 80px; display: flex; flex-direction: column; gap: 90px; }
@@ -43,6 +43,7 @@
 .learn-card.sec-outer .learn-icon { color: var(--green); }
 .learn-n { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .04em; }
 .learn-card h3 { font-size: 24px; }
+.learn-card h3 small { font-size: 16px; font-weight: 600; color: var(--muted); letter-spacing: 0; }
 .learn-card p { margin: 0; color: var(--fg-2); font-size: 15.5px; }
 .learn-quests { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--muted); margin: 0; }
 .site-foot { position: relative; z-index: 2; padding: 30px clamp(16px, 4vw, 40px) 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; text-align: center; }
@@ -74,8 +75,9 @@
 .lab-jump button.is-done { border-color: rgb(63 185 80 / 50%); color: #7ee787; background: rgb(46 160 67 / 12%); }
 .lab-main { max-width: 760px; margin: 0 auto; padding: 22px 14px 60px; display: flex; flex-direction: column; gap: 18px; }
 .lab-intro { display: flex; flex-direction: column; gap: 10px; padding: 6px 4px 8px; }
-.lab-intro h1 { font-size: clamp(34px, 8vw, 52px); font-weight: 800; font-stretch: 100%; letter-spacing: -0.035em; }
+.lab-intro h1 { font-size: clamp(30px, 7.4vw, 46px); line-height: 1.05; font-weight: 800; font-stretch: 100%; letter-spacing: -0.035em; }
 .lab-intro p { margin: 0; color: var(--fg-2); }
+.lab-explainer { font-size: 16.5px; }
 .privacy { display: block; font-size: 13.5px; color: var(--muted) !important; }
 .privacy .octicon { display: inline-block; vertical-align: -2px; margin-right: 6px; }
 .privacy .linkish { margin-left: 8px; }

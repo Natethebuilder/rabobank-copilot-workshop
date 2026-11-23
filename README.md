@@ -1,4 +1,4 @@
-# Rabobank × GitHub Copilot: Zero to pull request in 30 minutes
+# Rabobank × GitHub Copilot: An introduction to GitHub Copilot in VS Code
 
 Facilitator kit for a 30-minute, hands-on GitHub Copilot workshop in VS Code for Rabobank engineers who are new to Copilot.
 

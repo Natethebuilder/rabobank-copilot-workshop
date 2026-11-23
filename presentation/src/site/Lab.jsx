@@ -96,7 +96,7 @@ function Mission({ m, state, setState, toggle }) {
       <header className="mission-head">
         <span className="mission-n"><Octicon name={done ? 'check-circle' : m.icon} size={20} /></span>
         <div>
-          <span className="mission-meta">Mission {m.n} · {m.time} CET · <span className="ui-chip">{m.mode === 'Editor' ? 'Editor' : m.mode}</span></span>
+          <span className="mission-meta">Mission {m.n} · {m.caption} · {m.time} CET · <span className="ui-chip">{m.mode === 'Editor' ? 'Editor' : m.mode}</span></span>
           <h2 id={`h-${m.id}`}>{m.name}</h2>
         </div>
       </header>
@@ -163,7 +163,8 @@ export default function Lab() {
       <main className="lab-main">
         <section className="lab-intro">
           <span className="kicker">{EVENT.cobrand} · <span className="nowrap">{EVENT.time}</span></span>
-          <h1>Zero to <em>pull request</em></h1>
+          <h1>An introduction to <em>GitHub Copilot</em> <span className="nowrap">in VS Code</span></h1>
+          <p className="lab-explainer">{EVENT.explainer}</p>
           <p>Keep this guide next to VS Code. Every prompt has a copy button. Shortcuts follow the system you pick above.</p>
           <p className="privacy"><Octicon name="lock" size={14} />Your progress is saved only in this browser (localStorage). Nothing is sent anywhere.
             <button type="button" className="linkish" onClick={() => { if (window.confirm('Reset your progress in this browser?')) setState({ ...EMPTY }) }}>Reset progress</button>
@@ -197,7 +198,7 @@ export default function Lab() {
             <Mascot />
             <span className="badge-ring" aria-hidden="true" />
           </div>
-          <h2 id="h-finish">{finished ? <>Zero to <em>pull request</em>: done!</> : 'Finish line'}</h2>
+          <h2 id="h-finish">{finished ? <>You shipped a <em>pull request</em>!</> : 'Finish line'}</h2>
           <p>{finished ? 'You explored, wrote, fixed, taught, chose a quest and shipped through review. That’s the whole loop.' : `Mark all six missions complete to collect your badge (${state.done.length}/6 so far).`}</p>
           <div className="week">
             <h3>Your first week</h3>

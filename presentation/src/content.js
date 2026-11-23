@@ -14,11 +14,10 @@ export const STORAGE_PREFIX = 'rcw'
 
 export const EVENT = {
   cobrand: 'Rabobank × GitHub Copilot',
-  title: 'Zero to',
-  highlight: 'pull request',
-  tail: 'in 30 minutes',
-  fullTitle: 'Zero to pull request in 30 minutes',
-  format: 'Hands-on · VS Code',
+  kicker: 'Rabobank × GitHub',
+  fullTitle: 'An introduction to GitHub Copilot in VS Code',
+  format: 'Hands-on workshop · 30 minutes',
+  explainer: 'Hands-on, in your own VS Code: explore a codebase you’ve never seen, write and fix code with Copilot, teach it your team’s rules, pick a quest and ship a reviewed pull request on github.com.',
   date: 'Wednesday 25 November 2026',
   time: '10:05–10:35 CET',
   tagline: 'A hands-on GitHub Copilot workshop in VS Code for first-time users.',
@@ -128,7 +127,7 @@ export const PROMPTS = {
 
 export const MISSIONS = [
   {
-    id: 'explore', n: 1, name: 'Explore', mode: 'Ask', time: '10:08–10:11', minutes: 3, section: 'inner', icon: 'eye',
+    id: 'explore', n: 1, name: 'Explore', mode: 'Ask', time: '10:08–10:11', minutes: 3, section: 'inner', icon: 'eye', caption: 'ask for a tour',
     headline: ['Ask before you', 'change'],
     goal: 'Get a guided tour of a codebase you have never seen, without changing a single file.',
     steps: [
@@ -144,7 +143,7 @@ export const MISSIONS = [
     ],
   },
   {
-    id: 'write', n: 2, name: 'Write', mode: 'Editor', time: '10:11–10:13', minutes: 2, section: 'inner', icon: 'pencil',
+    id: 'write', n: 2, name: 'Write', mode: 'Editor', time: '10:11–10:13', minutes: 2, section: 'inner', icon: 'pencil', caption: 'let Tab type',
     headline: ['Let', 'Tab', 'type'],
     goal: 'Feel inline suggestions, next edit suggestions and inline chat while you type.',
     steps: [
@@ -162,7 +161,7 @@ export const MISSIONS = [
     ],
   },
   {
-    id: 'fix', n: 3, name: 'Fix', mode: 'Agent', time: '10:13–10:18', minutes: 5, section: 'inner', icon: 'bug',
+    id: 'fix', n: 3, name: 'Fix', mode: 'Agent', time: '10:13–10:18', minutes: 5, section: 'inner', icon: 'bug', caption: 'a real bug, test-first',
     headline: ['Fix it', 'test-first'],
     goal: 'Let the agent find a real bug, prove it with a failing test, fix it and prove the fix.',
     steps: [
@@ -180,7 +179,7 @@ export const MISSIONS = [
     ],
   },
   {
-    id: 'teach', n: 4, name: 'Teach', mode: 'Agent', time: '10:18–10:21', minutes: 3, section: 'inner', icon: 'mortar-board',
+    id: 'teach', n: 4, name: 'Teach', mode: 'Agent', time: '10:18–10:21', minutes: 3, section: 'inner', icon: 'mortar-board', caption: 'your house rules',
     headline: ['Write it down', 'once'],
     goal: 'Give Copilot your team’s house rules once, and see them shape the next feature.',
     steps: [
@@ -196,7 +195,7 @@ export const MISSIONS = [
     ],
   },
   {
-    id: 'quest', n: 5, name: 'Choose your quest', shortName: 'Quest', mode: 'Agent', time: '10:21–10:27', minutes: 6, section: 'quest', icon: 'north-star',
+    id: 'quest', n: 5, name: 'Choose your quest', shortName: 'Quest', mode: 'Agent', time: '10:21–10:27', minutes: 6, section: 'quest', icon: 'north-star', caption: 'pick a scenario',
     headline: ['Choose your', 'quest'],
     goal: 'Pick one scenario (two if you’re fast) and see what Copilot can do for a real team.',
     steps: [{ text: 'Pick a quest card below. Each one has its prompts ready to copy.' }],
@@ -207,7 +206,7 @@ export const MISSIONS = [
     ],
   },
   {
-    id: 'ship', n: 6, name: 'Ship', mode: 'Agent', time: '10:27–10:32', minutes: 5, section: 'outer', icon: 'git-pull-request',
+    id: 'ship', n: 6, name: 'Ship', mode: 'Agent', time: '10:27–10:32', minutes: 5, section: 'outer', icon: 'git-pull-request', caption: 'PR + Copilot review',
     headline: ['Ship it through', 'review'],
     goal: 'Take your work from your laptop to a reviewed pull request on github.com.',
     steps: [
@@ -402,9 +401,9 @@ export const SECTIONS = {
 
 export const SLIDES = [
   {
-    id: 'title', title: 'Zero to pull request in 30 minutes', section: 'welcome', slot: '10:05–10:06',
+    id: 'title', title: 'An introduction to GitHub Copilot in VS Code', section: 'welcome', slot: '10:05–10:06',
     notes: [
-      'Welcome. In 30 minutes you go from opening Copilot to a reviewed pull request on github.com.',
+      'Welcome. This is a hands-on introduction to GitHub Copilot in VS Code. In 30 minutes you go from your first question to a reviewed pull request on github.com.',
       'Scan the QR code or open the guide: it sits next to VS Code and has every prompt with a copy button.',
       'Everything runs on your own laptop. Nothing extra to install. The bank in the lab is fictional, the data is fake.',
     ],

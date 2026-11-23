@@ -80,12 +80,15 @@ html.is-preview .slide { transition: none; }
 /* ── Title ──────────────────────────────────────────────────────────────── */
 .is-title .stage-inner { justify-content: center; }
 .title-grid { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center; }
-.title-main { display: flex; flex-direction: column; gap: 28px; }
-.title-main .display { font-size: 100px; line-height: 1; }
+.title-main { display: flex; flex-direction: column; gap: 22px; }
+.title-main .display { font-size: 88px; line-height: 1.02; }
+.title-explainer { margin: 0; max-width: 980px; font-size: 24px; line-height: 1.5; color: var(--fg-2); }
 .display em { white-space: nowrap; }
 .title-when { margin: 0; font-size: 28px; font-weight: 600; color: var(--fg-2); }
-.title-missions { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.title-missions li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 10px; background: rgb(22 27 34 / 94%); border: 1px solid var(--line); font-weight: 600; font-size: 17px; }
+.title-missions { list-style: none; margin: 6px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.title-missions li { display: grid; grid-template-columns: auto auto 1fr; align-items: center; column-gap: 8px; padding: 10px 14px; border-radius: 12px; background: rgb(22 27 34 / 94%); border: 1px solid var(--line); font-size: 17px; }
+.title-missions li b { font-weight: 700; }
+.title-missions li i { grid-column: 3; font-style: normal; font-size: 15px; color: var(--muted); }
 .title-missions li span { font-family: var(--mono); font-size: 13px; color: var(--muted); }
 .title-missions .octicon { color: var(--purple); }
 .title-missions .sec-quest .octicon { color: var(--pink); }

@@ -35,12 +35,12 @@ export default function Home() {
         <div className="hero-mascot"><Mascot className="is-hero" /></div>
         <div className="hero-text">
           <div className="pills">
-            <span className="pill pill-brand"><Octicon name="copilot" size={16} />{EVENT.cobrand}</span>
+            <span className="pill pill-brand"><Octicon name="copilot" size={16} />{EVENT.kicker}</span>
             <span className="pill">{EVENT.format}</span>
           </div>
-          <h1 className="display">Zero to <em>pull request</em> <span className="nowrap">in 30 minutes</span></h1>
+          <h1 className="display">An introduction to <em>GitHub Copilot</em> <span className="nowrap">in VS Code</span></h1>
           <p className="hero-when"><Octicon name="north-star" size={18} />{EVENT.date} · <strong>{EVENT.time}</strong></p>
-          <p className="hero-lede">{EVENT.tagline} You’ll explore, write, fix, teach and ship on a fictional bank’s payment service, on your own laptop, with nothing extra to install.</p>
+          <p className="hero-lede">{EVENT.explainer} All on a fictional bank’s payment service, on your own laptop, with nothing extra to install.</p>
           <div className="hero-cta">
             <a className="btn btn-primary" href="#/lab"><Octicon name="checklist" size={18} />Open the participant guide</a>
             <a className="btn" href="#/deck"><Octicon name="graph" size={18} />Deck</a>
@@ -93,7 +93,7 @@ export default function Home() {
               <article key={m.id} className={`learn-card sec-${m.section}`}>
                 <span className="learn-icon"><Octicon name={m.icon} size={22} /></span>
                 <span className="learn-n">Mission {m.n} · {m.time} CET</span>
-                <h3>{m.name}</h3>
+                <h3>{m.name} <small>· {m.caption}</small></h3>
                 <p>{m.goal}</p>
               </article>
             ))}

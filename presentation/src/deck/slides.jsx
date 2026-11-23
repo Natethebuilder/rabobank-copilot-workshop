@@ -78,13 +78,14 @@ const SPECS = {
       <div className="title-grid">
         <div className="title-main">
           <div className="s-kick">
-            <span className="pill pill-brand"><Octicon name="copilot" size={16} />{EVENT.cobrand}</span>
+            <span className="pill pill-brand"><Octicon name="copilot" size={16} />{EVENT.kicker}</span>
             <span className="pill">{EVENT.format}</span>
           </div>
-          <h1 className="display">Zero to <em>pull request</em><br />in 30 minutes</h1>
+          <h1 className="display">An introduction to <em>GitHub Copilot</em> <span className="nowrap">in VS Code</span></h1>
+          <p className="title-explainer">{EVENT.explainer}</p>
           <p className="title-when">{EVENT.date} · {EVENT.time}</p>
           <ol className="title-missions">
-            {MISSIONS.map((m) => <li key={m.id} className={`sec-${m.section}`}><Octicon name={m.icon} size={18} /><span>{m.n}</span>{m.shortName || m.name}</li>)}
+            {MISSIONS.map((m) => <li key={m.id} className={`sec-${m.section}`}><Octicon name={m.icon} size={18} /><span>{m.n}</span><b>{m.shortName || m.name}</b><i>{m.caption}</i></li>)}
           </ol>
         </div>
         <div className="title-side">

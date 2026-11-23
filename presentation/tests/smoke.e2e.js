@@ -15,11 +15,11 @@ const trackErrors = (page) => {
 test('every route renders without console errors', async ({ page }) => {
   const errors = trackErrors(page)
   const routes = [
-    ['#/', /Zero to pull request/],
-    ['#/deck', /Zero to pull request/],
-    ['#/presenter', /Zero to pull request in 30 minutes/],
-    ['#/lab', /Zero to pull request/],
-    ['#/cheatsheet', /Zero to pull request/],
+    ['#/', /An introduction to GitHub Copilot/],
+    ['#/deck', /An introduction to GitHub Copilot/],
+    ['#/presenter', /An introduction to GitHub Copilot in VS Code/],
+    ['#/lab', /An introduction to GitHub Copilot/],
+    ['#/cheatsheet', /An introduction to GitHub Copilot/],
   ]
   for (const [hash, heading] of routes) {
     await page.goto(`./${hash}`)
