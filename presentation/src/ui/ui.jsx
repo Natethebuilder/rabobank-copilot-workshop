@@ -1,7 +1,7 @@
 import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import qrcode from 'qrcode-generator'
 import { OCTICONS } from './octicons.js'
-import { LINK_LABELS, LINKS, SHORTCUTS, STORAGE_PREFIX } from '../content.js'
+import { LINK_LABELS, LINKS, SHORTCUTS, STORAGE_PREFIX, TICKETS } from '../content.js'
 
 export const BASE = import.meta.env.BASE_URL
 
@@ -224,4 +224,17 @@ export function useHash() {
     return () => window.removeEventListener('hashchange', on)
   }, [])
   return hash
+}
+
+export function TicketBox({ id, className = '' }) {
+  const t = TICKETS.find((x) => x.id === id)
+  if (!t) return null
+  return (
+    <aside className={`ticket-box is-${t.type} ${className}`} aria-label={`Ticket ${t.id}`}>
+      <p className="tb-head"><code>{t.id}</code><span className="tb-type">{t.type}</span><strong>{t.title}</strong></p>
+      <p className="tb-about">{t.about}</p>
+      <p className="tb-done"><b>Done when:</b> {t.done}</p>
+      <p className="tb-file">Full ticket: <code>docs/tickets/{t.id}.md</code></p>
+    </aside>
+  )
 }

@@ -262,6 +262,7 @@ export function TicketBoard() {
         <article key={t.id} className={`ticket is-${t.type}`}>
           <header><code>{t.id}</code><span className="ticket-type">{t.type}</span></header>
           <h4>{t.title}</h4>
+          <p className="ticket-about">{t.about}</p>
           <span className="ticket-tag">{t.tag}</span>
         </article>
       ))}

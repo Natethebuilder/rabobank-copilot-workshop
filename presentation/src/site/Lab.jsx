@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { EVENT, FIRST_WEEK, LINKS, MISSIONS, QUESTS, READY } from '../content.js'
-import { CodeCard, Mascot, Octicon, OsToggle, PromptCard, Rich, store } from '../ui/ui.jsx'
+import { CodeCard, Mascot, Octicon, OsToggle, PromptCard, Rich, store, TicketBox } from '../ui/ui.jsx'
 import { SiteFooter } from './Home.jsx'
 import './site.css'
 
@@ -78,6 +78,7 @@ function QuestBoard({ state, toggle }) {
             {isOpen && (
               <div className="qb-body">
                 <p>{q.blurb}</p>
+                {q.ticket && <TicketBox id={q.ticket} />}
                 <StepList steps={q.steps} />
                 <label className="check"><input type="checkbox" checked={done} onChange={() => toggle('quests', q.id)} /> I did this quest</label>
               </div>
@@ -107,6 +108,7 @@ function Mission({ m, state, setState, toggle }) {
           <input type="text" value={state.name} placeholder="e.g. sanne" onChange={(e) => setState((s) => ({ ...s, name: e.target.value }))} />
         </label>
       )}
+      {m.ticket && <TicketBox id={m.ticket} />}
       <StepList steps={m.steps} name={state.name} />
       {m.id === 'quest' && <QuestBoard state={state} toggle={toggle} />}
       <div className="see">

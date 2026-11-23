@@ -220,7 +220,7 @@ html.is-preview .slide { transition: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ── Woodgrove ──────────────────────────────────────────────────────────── */
-.wg-grid { display: grid; grid-template-columns: 1fr 560px; gap: 30px; flex: 1; min-height: 0; }
+.wg-grid { display: grid; grid-template-columns: 1fr 720px; gap: 30px; flex: 1; min-height: 0; }
 .svcmap { display: grid; grid-template-columns: 1fr 30px 1fr 30px 1fr; grid-template-rows: 1fr auto; gap: 12px 10px; align-items: center; padding: 22px; border-radius: 18px; border: 1px solid var(--line); background: rgb(13 17 23 / 94%); }
 .svc-col { display: flex; flex-direction: column; gap: 10px; }
 .svc-col h4 { font-family: var(--font); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
@@ -502,3 +502,31 @@ html.is-presenter, html.is-presenter body { height: 100%; overflow: hidden; }
 .m-body.is-write { grid-template-columns: 1fr 620px; }
 .is-recipe .stage-inner { gap: 20px; }
 .moves code { white-space: nowrap; font-size: .8em; }
+.ticket { padding: 12px 14px; gap: 6px; }
+.ticket h4 { font-size: 16px; }
+.ticket-about { margin: 0; font-size: 13.5px; line-height: 1.42; color: var(--muted); }
+.is-woodgrove .stage-inner { gap: 22px; }
+.is-woodgrove .s-sub { font-size: 21px; }
+.is-woodgrove .svc { padding: 10px 12px; }
+.is-woodgrove .svc code { font-size: 15px; }
+.is-woodgrove .svc span { font-size: 13px; }
+.ticket-box.is-deck { font-size: 16px; padding: 14px 18px; gap: 6px; background: rgb(13 17 23 / 94%); }
+.ticket-box.is-deck .tb-head strong { font-size: 17px; }
+.ticket-box.is-deck .tb-file { display: none; }
+.is-fix .m-see ul { font-size: 16.5px; }
+.is-fix .redgreen { padding: 12px; font-size: 18px; }
+.is-woodgrove .s-head { gap: 10px; }
+.is-woodgrove .s-head h2 { font-size: 58px; }
+.is-woodgrove .s-sub { font-size: 19px; }
+.is-woodgrove .stage-inner { gap: 18px; padding-bottom: 90px; }
+.is-woodgrove .tickets { gap: 10px; }
+.is-woodgrove .ticket { padding: 10px 14px; gap: 4px; }
+.is-woodgrove .ticket h4 { font-size: 15.5px; }
+.is-woodgrove .ticket-about { font-size: 13px; line-height: 1.38; }
+.is-woodgrove .svcmap { padding: 16px 18px; }
+.is-woodgrove .svc-col { gap: 8px; }
+.is-fix .redgreen { display: none; }
+.is-quest .quest-detail { gap: 10px; padding: 18px 20px; }
+.is-quest .quest-detail .prompt pre { font-size: 14.5px; }
+.is-quest .quest-step { font-size: 16px; }
+.is-woodgrove .s-sub { max-width: none; }

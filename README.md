@@ -16,7 +16,7 @@ Facilitator kit for a 30-minute, hands-on GitHub Copilot workshop in VS Code for
 |---|---|---|
 | 10:05–10:08 | Welcome: autocomplete to agents, two loops, you stay in control, meet Woodgrove Transfers | 1–6 |
 | 10:08–10:11 | Mission 1 · Explore (Ask) | 7 |
-| 10:11–10:13 | Mission 2 · Write (inline suggestions, next edits, inline chat) | 8 |
+| 10:11–10:13 | Mission 2 · Write (inline suggestions, next edits) | 8 |
 | 10:13–10:18 | Mission 3 · Fix (Agent, test-first), then "Why FR14 failed" while agents work | 9–10 |
 | 10:18–10:21 | Mission 4 · Teach (custom instructions, then WGB-104) | 11 |
 | 10:21–10:27 | Mission 5 · Choose your quest, prompt recipe while quests run | 12–13 |
@@ -32,7 +32,7 @@ Each mission slide has a countdown ring (▶ start, ❚❚ pause, ↺ reset). Sp
 - [ ] Confirm with Rabobank's GitHub admins that participants have Copilot with **Agent** and **Ask**, the **integrated browser** / browser tools, and the **permission levels** (Manual, Assisted, Allow all) enabled by policy.
 - [ ] Confirm that managed users can **create a private repository from a public template**. If not, pre-create one repository per participant (from the template) in a sandbox organisation and share the list.
 - [ ] Confirm **Copilot code review** is enabled for those repositories.
-- [ ] Check whether **GitHub Actions** (the lab's CI) and the **GitHub Copilot Evals** extension (preview) are allowed. If not, skip those beats on screen.
+- [ ] Check whether **GitHub Actions** (the lab's CI) is allowed. If not, show the CI step on screen.
 - [ ] Confirm **GitHub Codespaces** is available as the backup (the lab has a `.devcontainer`).
 - [ ] Send participants the home page link so they can do the ready check before the session.
 

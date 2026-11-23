@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Slide, useDisclosure, useSlides } from '@deckio/deck-engine'
 import { CHAT_CONTROLS, EVENT, FIRST_WEEK, FIVE_MOVES, HOUSE_RULES, LEVEL_UP, LINKS, MISSIONS, READY, SLIDES } from '../content.js'
-import { BothOs, CodeCard, Mascot, Octicon, PromptCard, Qr, Rich } from '../ui/ui.jsx'
+import { BothOs, CodeCard, Mascot, Octicon, PromptCard, Qr, Rich, TicketBox } from '../ui/ui.jsx'
 import { MotionContext } from './motion.js'
 import { CloudCard, ControlExplorer, Countdown, GhostDemo, LoopMap, PrecisionExplorer, QuestPicker, RecipeBuilder, ServiceMap, ShipPipeline, SurfaceMap, TicketBoard } from './widgets.jsx'
 
@@ -31,7 +31,7 @@ function MissionKick({ m }) {
     <div className="s-kick">
       <span className={`pill pill-mission sec-${m.section}`}><Octicon name={m.icon} size={16} />Mission {m.n} · {m.shortName || m.name}</span>
       <span className="pill"><Octicon name="north-star" size={14} />{m.time} CET</span>
-      <span className="pill pill-mode">{m.mode === 'Editor' ? 'Editor · Tab · inline chat' : m.mode}</span>
+      <span className="pill pill-mode">{m.mode === 'Editor' ? 'Editor · Tab' : m.mode}</span>
     </div>
   )
 }
@@ -193,6 +193,7 @@ const SPECS = {
           <div className="m-body">
             <Steps steps={m.steps} compact />
             <aside className="m-side">
+              <TicketBox id={m.ticket} className="is-deck" />
               <See items={m.see} />
               <div className="redgreen"><span className="rg-red">✗ 1 failed</span><span className="rg-arrow">→</span><span className="rg-green">✓ all passed</span></div>
             </aside>

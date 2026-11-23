@@ -69,7 +69,7 @@ export const CHAT_CONTROLS = [
 export const AGENDA = [
   { time: '10:05–10:08', title: 'Welcome', text: 'Copilot from autocomplete to agents, two loops, you stay in control, meet Woodgrove Transfers', section: 'welcome' },
   { time: '10:08–10:11', title: 'Mission 1 · Explore', text: 'Ask for a tour of a codebase you have never seen', section: 'inner', mission: 'explore' },
-  { time: '10:11–10:13', title: 'Mission 2 · Write', text: 'Inline suggestions, next edit suggestions and inline chat', section: 'inner', mission: 'write' },
+  { time: '10:11–10:13', title: 'Mission 2 · Write', text: 'Inline suggestions and next edit suggestions', section: 'inner', mission: 'write' },
   { time: '10:13–10:18', title: 'Mission 3 · Fix', text: 'Fix a real precision bug test-first with the agent', section: 'inner', mission: 'fix' },
   { time: '10:18–10:21', title: 'Mission 4 · Teach', text: 'House rules in custom instructions, then a feature', section: 'inner', mission: 'teach' },
   { time: '10:21–10:27', title: 'Mission 5 · Choose your quest', text: 'Build, secure, test, translate, document or automate', section: 'quest', mission: 'quest' },
@@ -118,7 +118,6 @@ export const PROMPTS = {
   explain: 'Explain how isValidIban in src/iban.js works, step by step, using NL91 ABNA 0417 1643 00 as the example.',
   maskComment: '// Mask an IBAN for logs: keep the country code and the last four characters',
   maskStart: 'function maskIban(',
-  inline: 'Return an empty string for empty input and add a one-line JSDoc comment.',
   fix: 'Customers report the bug in docs/tickets/WGB-101.md. Find the root cause and write a failing regression test first. Then fix it without changing the public API, and run the tests to prove it. If Node isn\'t installed, open tests/index.html in the integrated browser to run them.',
   fixFollowUp: 'Explain the root cause as if I\'m new to JavaScript.',
   fee: 'Implement docs/tickets/WGB-104.md.',
@@ -145,23 +144,21 @@ export const MISSIONS = [
   {
     id: 'write', n: 2, name: 'Write', mode: 'Editor', time: '10:11–10:13', minutes: 2, section: 'inner', icon: 'pencil', caption: 'let Tab type',
     headline: ['Let', 'Tab', 'type'],
-    goal: 'Feel inline suggestions, next edit suggestions and inline chat while you type.',
+    goal: 'Feel inline suggestions and next edit suggestions while you type.',
     steps: [
       { text: 'Open `src/iban.js`. Inside the factory function, just above the `return {` line, type this comment and press Enter:' },
       { prompt: PROMPTS.maskComment, label: 'Type this comment' },
       { text: 'Then type `function maskIban(` and wait for grey ghost text. Press {k:accept} to accept ({k:acceptWord} accepts one word at a time).' },
       { text: 'Add `maskIban` to the returned object. A next edit suggestion may offer it: look for the arrow in the gutter and press {k:accept}.' },
-      { text: 'Select the new function, press {k:inlineChat} (inline chat) and enter:' },
-      { prompt: PROMPTS.inline },
     ],
-    see: ['Grey ghost text that {k:accept} accepts and {k:dismiss} dismisses.', 'An arrow in the gutter for the next edit.', 'An inline diff you can [[Keep]] or [[Undo]].'],
+    see: ['Grey ghost text that {k:accept} accepts and {k:dismiss} dismisses.', 'An arrow in the gutter for the next edit.', 'A finished `maskIban` you accepted with {k:accept}.'],
     stuck: [
       'No ghost text? Check the Copilot icon in the Status Bar: completions may be snoozed or turned off for JavaScript.',
       'Ghost text looks different from ours? That’s normal: suggestions vary. Accept what looks right and edit it.',
     ],
   },
   {
-    id: 'fix', n: 3, name: 'Fix', mode: 'Agent', time: '10:13–10:18', minutes: 5, section: 'inner', icon: 'bug', caption: 'a real bug, test-first',
+    id: 'fix', n: 3, name: 'Fix', mode: 'Agent', time: '10:13–10:18', minutes: 5, section: 'inner', icon: 'bug', caption: 'a real bug, test-first', ticket: 'WGB-101',
     headline: ['Fix it', 'test-first'],
     goal: 'Let the agent find a real bug, prove it with a failing test, fix it and prove the fix.',
     steps: [
@@ -179,7 +176,7 @@ export const MISSIONS = [
     ],
   },
   {
-    id: 'teach', n: 4, name: 'Teach', mode: 'Agent', time: '10:18–10:21', minutes: 3, section: 'inner', icon: 'mortar-board', caption: 'your house rules',
+    id: 'teach', n: 4, name: 'Teach', mode: 'Agent', time: '10:18–10:21', minutes: 3, section: 'inner', icon: 'mortar-board', caption: 'your house rules', ticket: 'WGB-104',
     headline: ['Write it down', 'once'],
     goal: 'Give Copilot your team’s house rules once, and see them shape the next feature.',
     steps: [
@@ -225,16 +222,17 @@ export const MISSIONS = [
 
 export const QUESTS = [
   {
-    id: 'build', emoji: '🧩', name: 'Build: Verification of Payee', minutes: 7, tags: ['/plan', 'Agent', 'integrated browser'],
+    id: 'build', emoji: '🧩', name: 'Build: Verification of Payee', minutes: 8, tags: ['/plan', 'Agent', 'integrated browser'], ticket: 'WGB-102',
     blurb: 'Plan, then build a feature that EU banks must offer for euro transfers since 9 October 2025.',
     steps: [
-      { prompt: '/plan Implement Verification of Payee as described in docs/tickets/WGB-102.md, including the transfer console.' },
-      { text: 'Review the plan, then tell it to start implementing. Then:' },
+      { prompt: '/plan Implement Verification of Payee as described in docs/tickets/WGB-102.md, including the transfer console. Before you write the plan, ask me 5 short questions about the key decisions, each with a recommended answer.' },
+      { text: 'Answer its 5 questions. Not sure? Pick the recommended answer. It may ask, for example, how strict the name match should be or what the console shows for a close match.' },
+      { text: 'Review the plan, then select [[Implement Plan]]. Then:' },
       { prompt: 'Open console/index.html in the integrated browser and check the examples from the ticket.' },
     ],
   },
   {
-    id: 'secure', emoji: '🔒', name: 'Secure: bank-grade review', minutes: 6, tags: ['Agent as reviewer'],
+    id: 'secure', emoji: '🔒', name: 'Secure: bank-grade review', minutes: 6, tags: ['Agent as reviewer'], ticket: 'WGB-103',
     blurb: 'Find what an auditor would find, before the audit.',
     steps: [{ prompt: 'Act as a bank security reviewer and work through docs/tickets/WGB-103.md. First list every finding with its severity and file, then fix the high-severity ones and run the tests.' }],
   },
@@ -249,29 +247,28 @@ export const QUESTS = [
     steps: [{ prompt: 'Port src/iban.js to a Java 21 class named IbanValidator with JUnit 5 tests, in a new java/ folder. Keep the behaviour identical, then explain the main differences between the two versions.' }],
   },
   {
-    id: 'document', emoji: '📄', name: 'Document: API docs and a diagram', minutes: 4, tags: ['docs', 'Mermaid'],
+    id: 'document', emoji: '📄', name: 'Document: API docs and a diagram', minutes: 4, tags: ['docs', 'Mermaid'], ticket: 'WGB-105',
     blurb: 'Endpoint reference, examples, error codes and a sequence diagram.',
     steps: [{ prompt: 'Implement docs/tickets/WGB-105.md.' }],
   },
   {
-    id: 'automate', emoji: '🤖', name: 'Automate: your own skill, tested with an eval', minutes: 7, tags: ['Agent Skills', 'Copilot Evals preview'],
+    id: 'automate', emoji: '🤖', name: 'Automate: your own skill', minutes: 5, tags: ['Agent Skills'],
     blurb: 'Turn a review you repeat into a reusable slash command.',
     steps: [
       { prompt: 'Create an agent skill named sepa-review in .github/skills/sepa-review. It reviews the current changes against our house rules and returns a pass/fail checklist with file and line references.' },
-      { text: 'Then start a new chat and type `/sepa-review`. Optional, preview: install the **GitHub Copilot Evals** extension, then:' },
-      { prompt: '/eval help me create an eval for my sepa-review skill' },
+      { text: 'Then start a new chat and type `/sepa-review`.' },
     ],
   },
 ]
 
 // ── Woodgrove Transfers ─────────────────────────────────────────────────────
 export const TICKETS = [
-  { id: 'WGB-101', type: 'bug', title: 'Some valid French and Italian IBANs are rejected as invalid', tag: 'Mission 3 · Fix', example: 'FR14 2004 1010 0505 0001 3M02 606 · IT21 A030 6909 6061 0000 0063 789' },
-  { id: 'WGB-102', type: 'feature', title: 'Verification of Payee', tag: 'Quest · Build' },
-  { id: 'WGB-103', type: 'task', title: 'Security and privacy review before the audit', tag: 'Quest · Secure' },
-  { id: 'WGB-104', type: 'feature', title: 'Instant transfer fee', tag: 'Mission 4 · Teach' },
-  { id: 'WGB-105', type: 'docs', title: 'API documentation', tag: 'Quest · Document' },
-  { id: 'WGB-106', type: 'feature', title: 'Scheduled transfers', tag: 'Cloud agent · live demo' },
+  { id: 'WGB-101', type: 'bug', title: 'Some valid French and Italian IBANs are rejected as invalid', tag: 'Mission 3 · Fix', about: "Customers can’t pay some French and Italian accounts: Woodgrove says the IBAN is invalid, although it’s correct. Dutch, German and Belgian IBANs work.", done: "Every IBAN in the ticket is accepted, wrong check digits are still rejected, and a regression test proves the fix." },
+  { id: 'WGB-102', type: 'feature', title: 'Verification of Payee', tag: 'Quest · Build', about: "Since 9 October 2025, EU banks must check the payee’s name against the IBAN before a euro transfer. Woodgrove starts with its own accounts.", done: "A new verifyPayee in src/payee.js returns MATCH, CLOSE_MATCH (with a suggested name), NO_MATCH or NOT_POSSIBLE, and the console shows the result under the name field." },
+  { id: 'WGB-103', type: 'task', title: 'Security and privacy review before the audit', tag: 'Quest · Secure', about: "The internal audit starts next month. Review what the service logs, which secrets are in the code, how it handles user input and what its errors reveal.", done: "A list of findings by severity and file, with the high-severity ones fixed and tested." },
+  { id: 'WGB-104', type: 'feature', title: 'Instant transfer fee', tag: 'Mission 4 · Teach', about: "From 1 January, instant transfers, which arrive within 10 seconds, cost 0.1% of the amount: at least € 0,20 and at most € 2,50. Standard transfers stay free.", done: "createTransfer adds feeCents, the console shows the fee, and tests cover every example in the ticket." },
+  { id: 'WGB-105', type: 'docs', title: 'API documentation', tag: 'Quest · Document', about: "The mobile team will call the Transfers API next sprint, but the only documentation is the code in server.js.", done: "docs/api.md documents every endpoint with real examples, lists every error code and includes a Mermaid sequence diagram of POST /transfers." },
+  { id: 'WGB-106', type: 'feature', title: 'Scheduled transfers', tag: 'Cloud agent · live demo', about: "Customers want to set up a transfer now and have it sent later, such as rent on the first of the month.", done: "An optional executionDate gives status SCHEDULED; past or invalid dates and scheduled instant transfers are rejected with clear error codes." },
 ]
 
 export const SERVICE = [
@@ -289,16 +286,16 @@ export const SERVICE = [
 export const SURFACES = [
   { id: 'inline', name: 'Inline suggestions', where: 'vscode', icon: 'sparkle-fill', what: 'Grey ghost text as you type. Tab accepts, Esc dismisses.', mission: 'Mission 2 · Write' },
   { id: 'nes', name: 'Next edit suggestions', where: 'vscode', icon: 'zap', what: 'Predicts the next edit that follows from your last one, even elsewhere in the file. Look for the arrow in the gutter.', mission: 'Mission 2 · Write' },
-  { id: 'inlinechat', name: 'Inline chat', where: 'vscode', icon: 'pencil', what: 'Ask for a change right where you are, in the editor or terminal. You get an inline diff to keep or undo.', mission: 'Mission 2 · Write' },
+  { id: 'inlinechat', name: 'Inline chat', where: 'vscode', icon: 'pencil', what: 'Ask for a change right where you are, in the editor or terminal. You get an inline diff to keep or undo.', mission: 'Level up' },
   { id: 'ask', name: 'Chat · Ask', where: 'vscode', icon: 'eye', what: 'Questions about your code. Ask answers without editing files.', mission: 'Mission 1 · Explore' },
   { id: 'agent', name: 'Chat · Agent', where: 'vscode', icon: 'agent', what: 'Plans, edits files, runs commands and tests, and iterates until the task is done, with your approval.', mission: 'Missions 3–6' },
-  { id: 'plan', name: '/plan', where: 'vscode', icon: 'checklist', what: 'Plan before building: review the steps first, then tell it to start implementing.', mission: 'Quest · Build' },
+  { id: 'plan', name: '/plan', where: 'vscode', icon: 'checklist', what: 'Plan before building: it asks you questions, you review the plan, then select Implement Plan.', mission: 'Quest · Build' },
   { id: 'agents', name: 'Agents window', where: 'vscode', icon: 'workflow', what: 'Run sessions in parallel in their own worktrees, compare models and pick up drafts.', mission: 'Level up' },
   { id: 'cloud', name: 'Cloud sessions', where: 'vscode', icon: 'upload', what: 'Set Session Target to Cloud: the session runs on GitHub and keeps going when your laptop closes.', mission: 'Level up' },
   { id: 'review', name: 'Copilot code review', where: 'github', icon: 'code-review', what: 'Request Copilot under Reviewers on a pull request. Effort Lite, Balanced (default) or Max.', mission: 'Mission 6 · Ship' },
   { id: 'cloudagent', name: 'Copilot cloud agent', where: 'github', icon: 'dependabot', what: 'Assign an issue to Copilot. It works in the cloud and opens a pull request for you to review.', mission: 'Live demo · WGB-106' },
   { id: 'automations', name: 'Automations', where: 'github', icon: 'sync', what: 'Cloud agent runs triggered manually, by events or on a schedule. Start one with /automate.', mission: 'Live demo · Mission 6' },
-  { id: 'evals', name: 'Copilot Evals', where: 'github', icon: 'beaker', what: 'Repeatable tests for skills, agents and MCP tools. Public preview; /eval in VS Code.', mission: 'Quest · Automate' },
+  { id: 'evals', name: 'Copilot Evals', where: 'github', icon: 'beaker', what: 'Repeatable tests for skills, agents and MCP tools. Public preview; /eval in VS Code.', mission: 'Level up' },
 ]
 
 export const LOOPS = {
@@ -462,7 +459,6 @@ export const SLIDES = [
       'Now the editor. Type the comment, then function maskIban( and wait for ghost text. Tab accepts.',
       'Ctrl+→ or ⌘→ accepts one word at a time.',
       'Next edit suggestion: the arrow in the gutter suggests adding maskIban to the returned object.',
-      'Inline chat on the selection: empty input and a one-line JSDoc.',
     ],
   },
   {
