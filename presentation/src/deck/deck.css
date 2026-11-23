@@ -530,3 +530,4 @@ html.is-presenter, html.is-presenter body { height: 100%; overflow: hidden; }
 .is-quest .quest-detail .prompt pre { font-size: 14.5px; }
 .is-quest .quest-step { font-size: 16px; }
 .is-woodgrove .s-sub { max-width: none; }
+.svc code { white-space: nowrap; }
