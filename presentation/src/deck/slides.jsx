@@ -146,7 +146,7 @@ const SPECS = {
         <Head kickers={['Before Mission 1']} title={<h2>Ready <em>check</em></h2>} sub="Ideally done before we start. Not there yet? Keep going in the guide while we explore." />
         <ol className="ready-grid">
           {READY.map((r, i) => (
-            <li key={r.title}><span className="ready-num">{i + 1}</span><h3>{r.title}</h3><p><Rich text={r.text} /></p></li>
+            <li key={r.title}><span className="ready-num">{i + 1}</span><h3>{r.title}</h3><p><Rich text={r.short || r.text} /></p></li>
           ))}
         </ol>
         <div className="chat-controls" aria-label="Chat controls to check">

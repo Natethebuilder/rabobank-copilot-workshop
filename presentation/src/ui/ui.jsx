@@ -91,7 +91,7 @@ export function Rich({ text }) {
   return parts.map((part, i) => {
     if (!part) return null
     if (part.startsWith('**')) return <strong key={i}>{part.slice(2, -2)}</strong>
-    if (part.startsWith('`')) return <code key={i}>{part.slice(1, -1)}</code>
+    if (part.startsWith('`')) { const c = part.slice(1, -1); return <code key={i} className={c.length <= 24 ? 'nowrap' : undefined}>{c}</code> }
     if (part.startsWith('[[')) return <span key={i} className="ui-chip">{part.slice(2, -2)}</span>
     if (part.startsWith('{k:')) return <Keys key={i} id={part.slice(3, -1)} />
     if (part.startsWith('{link:')) {

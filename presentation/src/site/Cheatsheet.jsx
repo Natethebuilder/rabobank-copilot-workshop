@@ -42,6 +42,10 @@ export default function Cheatsheet() {
             </table>
           </Box>
 
+          <Box title="Setup" icon="terminal">
+            <p>Command Palette → <span className="ui-chip">Git: Clone</span> → <span className="ui-chip">Clone from GitHub</span> → open your copy · <code>npm install</code> · <code>npm test</code> (no Node: open <code>tests/index.html</code>).</p>
+          </Box>
+
           <Box title="Chat controls" icon="copilot">
             <ul className="cs-list">{CHAT_CONTROLS.map((c) => <li key={c.label}><b>{c.label}: {c.value}.</b> {c.note}</li>)}</ul>
             <ul className="cs-list cs-slash">{SLASH.map((s) => <li key={s.cmd}><code>{s.cmd}</code> {s.text}</li>)}</ul>

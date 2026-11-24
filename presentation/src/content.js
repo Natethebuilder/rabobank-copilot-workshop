@@ -31,6 +31,7 @@ export const LINKS = {
   cheatsheet: 'https://natethebuilder.github.io/rabobank-copilot-workshop/#/cheatsheet',
   lab: 'https://github.com/Natethebuilder/woodgrove-transfers',
   labClone: 'https://github.com/Natethebuilder/woodgrove-transfers.git',
+  node: 'https://nodejs.org/en/download',
   quickstart: 'https://code.visualstudio.com/docs/agents/quickstart',
   skillsCourse: 'https://github.com/skills/getting-started-with-github-copilot',
   copilotDocs: 'https://code.visualstudio.com/docs/copilot/overview',
@@ -53,6 +54,7 @@ export const SHORTCUTS = {
   inlineChat: { label: 'Inline chat (editor and terminal)', win: 'Ctrl+I', mac: '⌘I' },
   quickChat: { label: 'Quick Chat', win: 'Ctrl+Shift+Alt+L', mac: '⇧⌥⌘L' },
   palette: { label: 'Command Palette', win: 'Ctrl+Shift+P', mac: '⇧⌘P' },
+  terminal: { label: 'Open the terminal', win: 'Ctrl+`', mac: '⌃`' },
   accept: { label: 'Accept a suggestion', win: 'Tab', mac: 'Tab' },
   dismiss: { label: 'Dismiss a suggestion', win: 'Esc', mac: 'Esc' },
   acceptWord: { label: 'Accept the next word', win: 'Ctrl+→', mac: '⌘→' },
@@ -81,24 +83,43 @@ export const AGENDA = [
 export const READY = [
   {
     title: 'VS Code is up to date and Git works',
-    text: 'Help → **Check for Updates** (1.147 or later). Git is installed and works in the terminal.',
+    text: 'Help → [[Check for Updates]] (1.147 or later). In the terminal, `git --version` prints a version.',
+    note: 'First time using Git on this laptop? Set your name and email once: `git config --global user.name "Your Name"` and `git config --global user.email "you@example.com"`.',
+    short: 'Help → [[Check for Updates]] (1.147 or later). `git --version` prints a version.',
+  },
+  {
+    title: 'Node.js and npm are installed',
+    text: 'In a terminal, run `node -v` and `npm -v`. Version 18 or later? You’re done. If not, download the **LTS** installer from {link:node|nodejs.org} (or use your company’s software portal) and run it. Then quit and reopen VS Code, so its terminal finds Node.',
+    note: 'Can’t install software? Skip this step: you can run the tests in a browser instead.',
+    short: '`node -v` and `npm -v` show 18+. If not, install the **LTS** from nodejs.org.',
   },
   {
     title: 'Signed in to GitHub Copilot',
     text: 'The Copilot icon in the Status Bar shows no warning, and the Chat view opens with {k:chatView}.',
+    short: 'No warning on the Copilot icon; {k:chatView} opens the Chat view.',
   },
   {
     title: 'Your own copy of the lab',
-    text: 'Open {link:lab|Natethebuilder/woodgrove-transfers} → [[Use this template]] → [[Create a new repository]] → owner: you (or your team’s sandbox organisation) → [[Private]] → [[Create repository]]. In VS Code: Command Palette ({k:palette}) → [[Git: Clone]] → paste your copy’s URL → open it and select [[Trust]].',
-    note: 'No permission to create a repository? Clone `https://github.com/Natethebuilder/woodgrove-transfers` directly, do Missions 1–5, and follow Mission 6 on screen.',
+    text: 'Open {link:lab|Natethebuilder/woodgrove-transfers} → [[Use this template]] → [[Create a new repository]] → owner: you (or your team’s sandbox organisation) → [[Private]] → [[Create repository]].',
+    note: 'No permission to create a repository? Clone `https://github.com/Natethebuilder/woodgrove-transfers` in the next step instead, do Missions 1–5, and follow Mission 6 on screen.',
+    short: 'woodgrove-transfers → [[Use this template]] → [[Private]] → [[Create repository]].',
+  },
+  {
+    title: 'Clone it into VS Code',
+    text: 'Command Palette ({k:palette}) → [[Git: Clone]] → [[Clone from GitHub]]. Sign in if asked, then pick `<your-account>/woodgrove-transfers`. Choose a folder to save it in and select [[Open]]. If VS Code asks whether you trust the folder, select [[Manage]] → [[Trust]].',
+    note: 'Prefer a URL? On your copy’s page on github.com, select [[Code]], copy the HTTPS URL and paste it after [[Git: Clone]].',
+    short: 'Command Palette → [[Git: Clone]] → [[Clone from GitHub]] → pick your copy → [[Open]] → [[Trust]].',
+  },
+  {
+    title: 'Install and run the tests',
+    text: 'Open the terminal ({k:terminal}, or [[Terminal]] → [[New Terminal]]). It starts in your copy’s folder. Run `npm install` (it takes a second: the lab has no dependencies), then `npm test`. Everything is green: **✓ 30 passed**.',
+    note: 'Windows says running scripts is disabled? Run `node tests/run.js` instead (or `npm.cmd test`). No Node.js at all? Open `tests/index.html` in a browser.',
+    short: '[[Terminal]] → [[New Terminal]], then `npm install` and `npm test`: **✓ 30 passed**.',
   },
   {
     title: 'Check the chat controls',
     text: 'In the Chat view, start a new chat ({k:newChat}) and check: [[Session Target: Copilot]] [[Agent]] [[Auto]] [[Manual permissions]]. Use [[Ask]] where a mission says so.',
-  },
-  {
-    title: 'Run the tests once',
-    text: 'Run `node tests/run.js` in the terminal, or open `tests/index.html` in a browser if Node isn’t installed. Everything is green: **✓ 30 passed**.',
+    short: 'New chat ({k:newChat}): the four controls below.',
   },
 ]
 
@@ -440,7 +461,7 @@ export const SLIDES = [
   {
     id: 'ready', title: 'Ready check', section: 'welcome', slot: '10:07–10:08',
     notes: [
-      'Hands up if you see ✓ 30 passed. If not, keep going with the guide’s ready check while I start Mission 1.',
+      'Seven steps, ideally done before today. Hands up if npm test shows ✓ 30 passed. If not, keep going with the guide’s ready check while I start Mission 1.',
       'Check the chat controls: Session Target Copilot, Agent, Auto, Manual permissions.',
     ],
   },

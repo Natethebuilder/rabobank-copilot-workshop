@@ -33,6 +33,7 @@ Each mission slide has a countdown ring (▶ start, ❚❚ pause, ↺ reset). Sp
 - [ ] Confirm that managed users can **create a private repository from a public template**. If not, pre-create one repository per participant (from the template) in a sandbox organisation and share the list.
 - [ ] Confirm **Copilot code review** is enabled for those repositories.
 - [ ] Check whether **GitHub Actions** (the lab's CI) is allowed. If not, show the CI step on screen.
+- [ ] Ask participants to install Node.js LTS before the day, or check it's available in the company software portal. The tests/index.html fallback covers anyone without it.
 - [ ] Confirm **GitHub Codespaces** is available as the backup (the lab has a `.devcontainer`).
 - [ ] Send participants the home page link so they can do the ready check before the session.
 
